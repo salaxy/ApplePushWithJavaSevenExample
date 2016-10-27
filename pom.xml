@@ -31,13 +31,13 @@
 	<dependency>
 	    <groupId>org.eclipse.jetty</groupId>
 	    <artifactId>jetty-client</artifactId>
-	    <version>9.3.13.v20161014</version>
+	    <version>9.0.7.v20131107</version>
 	</dependency>
 
 	<dependency>
 	    <groupId>org.eclipse.jetty</groupId>
 	    <artifactId>jetty-util</artifactId>
-	    <version>9.3.13.v20161014</version>
+	    <version>9.0.7.v20131107</version>
 	</dependency>
 
   </dependencies>
