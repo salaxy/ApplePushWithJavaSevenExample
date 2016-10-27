@@ -1,3 +1,9 @@
 /bin
 /bin/*
 *.class
+*.war
+*.ear
+.classpath
+*.classpath
+.buildpath
+AwsCredentials.properties
