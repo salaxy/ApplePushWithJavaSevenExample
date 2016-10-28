@@ -1,7 +1,5 @@
 /bin
 /bin/*
-/target
-/target/*
 *.class
 *.war
 *.ear
@@ -11,3 +9,4 @@
 AwsCredentials.properties
 cert.p12
 cert.pem
+target

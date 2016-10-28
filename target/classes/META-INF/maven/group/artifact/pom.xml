@@ -22,6 +22,7 @@
       <scope>test</scope>
     </dependency>
     
+    <!-- see@ http://square.github.io/okhttp/ -->
     <dependency>
 	  <groupId>com.squareup.okhttp3</groupId>
 	  <artifactId>okhttp</artifactId>
@@ -40,10 +41,20 @@
 	    <version>9.0.7.v20131107</version>
 	</dependency>
 
+	<!-- see@ https://github.com/relayrides/pushy -->
 	<dependency>
 	    <groupId>com.relayrides</groupId>
 	    <artifactId>pushy</artifactId>
 	    <version>0.8.1</version>
+	</dependency>
+	
+	<!-- needed libar for Libraries for Token Signing/Verification-->
+	<!-- its duty for using apple provider API -->
+	<!-- see@ https://jwt.io/ -->
+	<dependency>
+	    <groupId>io.jsonwebtoken</groupId>
+	    <artifactId>jjwt</artifactId>
+	    <version>0.6.0</version>
 	</dependency>
 
   </dependencies>
