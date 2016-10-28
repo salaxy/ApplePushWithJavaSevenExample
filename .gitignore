@@ -1,5 +1,7 @@
 /bin
 /bin/*
+/target
+/target/*
 *.class
 *.war
 *.ear
@@ -7,3 +9,5 @@
 *.classpath
 .buildpath
 AwsCredentials.properties
+cert.p12
+cert.pem
