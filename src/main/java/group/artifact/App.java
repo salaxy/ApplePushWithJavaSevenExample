@@ -37,7 +37,10 @@ public class App {
 		System.out.println("Start Apple Push Test!");
 
 		final OkHttpClient client = App.getUnsafeOkHttpClient();
-		final Request request = new Request.Builder().url("https://localhost:8443").build();
+		String adress = "https://" + HOST + ":" + PORT;
+		System.out.println(adress);
+		final Request request = new Request.Builder().url(adress).build();
+
 		// The Http2Server should be running here.
 		final long startTime = System.nanoTime();
 
