@@ -10,3 +10,6 @@ AwsCredentials.properties
 cert.p12
 cert.pem
 target
+/target/classes/META-INF
+/target/classes/META-INF/maven/group/artifact/pom.properties
+/target/classes/META-INF/maven/group/artifact/pom.xml
