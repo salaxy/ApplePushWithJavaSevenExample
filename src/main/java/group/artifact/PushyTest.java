@@ -21,8 +21,6 @@ import io.netty.util.concurrent.Future;
  * -Xbootclasspath/p:c:/alpn/alpn-boot-7.1.3.v20150130.jar this ALPN-Version
  * should work with java 1.7 download at
  * https://mvnrepository.com/artifact/org.mortbay.jetty.alpn/alpn-boot
- * 
- *
  */
 public class PushyTest {
 
@@ -34,8 +32,8 @@ public class PushyTest {
 	 */
 	public static void main(final String[] args) throws SSLException, IOException, InterruptedException {
 
-		final ApnsClient apnsClient = new ApnsClientBuilder().setClientCredentials(new File("cert.p12"), "umdapp")
-				.build();
+		final ApnsClient apnsClient = new ApnsClientBuilder()
+				.setClientCredentials(new File("cert.p12"), "your_password").build();
 
 		final Future<Void> connectFuture = apnsClient.connect(ApnsClient.DEVELOPMENT_APNS_HOST);
 		connectFuture.await();
@@ -47,9 +45,9 @@ public class PushyTest {
 			payloadBuilder.setAlertBody("{messageCode: 4, accountID: FA5EF}");
 
 			final String payload = payloadBuilder.buildWithDefaultMaximumLength();
-			final String token = TokenUtil.sanitizeTokenString("<replace_this_with your_token>");
+			final String token = TokenUtil.sanitizeTokenString("<your_device_token>");
 
-			pushNotification = new SimpleApnsPushNotification(token, "de.tgic.umd", payload);
+			pushNotification = new SimpleApnsPushNotification(token, "com.your.app", payload);
 		}
 
 		final Future<PushNotificationResponse<SimpleApnsPushNotification>> sendNotificationFuture = apnsClient
