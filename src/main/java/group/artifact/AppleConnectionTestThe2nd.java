@@ -20,6 +20,14 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import com.squareup.okhttp.TlsVersion;
 
+/**
+ * needed VM-arguments -Djavax.net.debug=all -Dhttps.protocols=TLSv1.2
+ * -Ddeployment.security.TLSv1.2=true
+ * -Dsun.security.ssl.allowLegacyHelloMessages=true
+ * -Dsun.security.ssl.allowUnsafeRenegotiation=true
+ * -Xbootclasspath/p:C:/alpn/alpn-boot-7.1.3.v20150130.jar
+ *
+ */
 public class AppleConnectionTestThe2nd {
 
 	static final int PORT = Integer.parseInt(System.getProperty("port", "443"));
