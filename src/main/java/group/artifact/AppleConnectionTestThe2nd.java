@@ -25,14 +25,16 @@ import com.squareup.okhttp.TlsVersion;
  * -Ddeployment.security.TLSv1.2=true
  * -Dsun.security.ssl.allowLegacyHelloMessages=true
  * -Dsun.security.ssl.allowUnsafeRenegotiation=true
- * -Xbootclasspath/p:C:/alpn/alpn-boot-7.1.3.v20150130.jar
+ * 
+ * dont use-Xbootclasspath/p:C:/alpn/alpn-boot-7.1.3.v20150130.jar its not
+ * necessary with okhttp
  *
  */
 public class AppleConnectionTestThe2nd {
 
 	static final int PORT = Integer.parseInt(System.getProperty("port", "443"));
 	static final String URL2DATA = System.getProperty("url2data", "test data!");
-	private static final String TRUST_STORE_PASSWORD = "your_password";
+	private static final String TRUST_STORE_PASSWORD = "your_pw";
 
 	public static final String ENDPOINT_PRODUCTION = "https://api.push.apple.com";
 	public static final String ENDPOINT_SANDBOX = "https://api.development.push.apple.com";
@@ -44,6 +46,23 @@ public class AppleConnectionTestThe2nd {
 
 		ConnectionSpec spec = new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS).tlsVersions(TlsVersion.TLS_1_2)
 				.cipherSuites(CipherSuite.TLS_DHE_RSA_WITH_AES_256_CBC_SHA256,
+						CipherSuite.TLS_RSA_WITH_3DES_EDE_CBC_SHA, CipherSuite.TLS_RSA_WITH_AES_128_CBC_SHA,
+						CipherSuite.TLS_RSA_WITH_AES_256_CBC_SHA, CipherSuite.TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA,
+						CipherSuite.TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA, CipherSuite.TLS_DHE_DSS_WITH_AES_128_CBC_SHA,
+						CipherSuite.TLS_DHE_RSA_WITH_AES_128_CBC_SHA, CipherSuite.TLS_DHE_DSS_WITH_AES_256_CBC_SHA,
+						CipherSuite.TLS_DHE_RSA_WITH_AES_256_CBC_SHA, CipherSuite.TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA,
+						CipherSuite.TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA,
+						CipherSuite.TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA,
+						CipherSuite.TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA,
+						CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA,
+						CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
+						CipherSuite.TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, CipherSuite.TLS_ECDH_RSA_WITH_AES_128_CBC_SHA,
+						CipherSuite.TLS_ECDH_RSA_WITH_AES_256_CBC_SHA, CipherSuite.TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA,
+						CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, CipherSuite.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,
+						CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+						CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+						CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256,
+						CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384,
 						CipherSuite.TLS_DHE_DSS_WITH_AES_256_CBC_SHA256)
 				.build();
 
